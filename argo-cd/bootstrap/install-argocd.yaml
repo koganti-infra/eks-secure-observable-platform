@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: argocd-admin
+  namespace: argocd
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-server
+  template:
+    metadata:
+      labels:
+        app: argocd-server
+    spec:
+      serviceAccountName: argocd-admin
+      containers:
+        - name: argocd-server
+          image: argoproj/argocd:v2.10.0
+          ports:
+            - containerPort: 8080
