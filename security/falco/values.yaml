@@ -1,0 +1,15 @@
+falco:
+  jsonOutput: true
+  priority: debug
+  rules:
+    - rule: Unexpected Shell in Container
+      desc: Shell was spawned in a container (unexpected behavior)
+      condition: spawned_process and container and shell_procs
+      output: >
+        Falco Alert: Unexpected shell in container (user=%user.name command=%proc.cmdline container=%container.id)
+      priority: WARNING
+      tags: [container, shell]
+
+# Optional: forward logs to Loki or external alerting system
+falcosidekick:
+  enabled: false
