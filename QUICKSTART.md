@@ -1,4 +1,4 @@
-# 🛡️ Secure, Observable, and Scalable EKS Platform on AWS
+# Secure, Observable, and Scalable EKS Platform on AWS
 
 This project demonstrates a production-grade EKS setup on AWS using Terraform, GitOps with Argo CD, Istio service mesh, Karpenter autoscaling, a full observability stack, and open-source security tools. It reflects real-world best practices and is structured for scalability and maintainability.
 
