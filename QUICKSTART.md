@@ -320,6 +320,3 @@ curl http://<EXTERNAL-IP>/
 terraform destroy
 ```
 
----
-
-All tested on AWS using free-tier resources
