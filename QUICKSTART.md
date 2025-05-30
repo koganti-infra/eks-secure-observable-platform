@@ -280,15 +280,16 @@ kubectl get nodes
 
 ### 3. Bootstrap Argo CD
 ```bash
-kubectl apply -f argo-cd/bootstrap/install-argocd.yaml
-kubectl get pods -n argocd
+helm repo add argo https://argoproj.github.io/argo-helm                                        ⎈ eks-secure-observable
+helm repo update
+helm install argocd argo/argo-cd -n argocd --create-namespace
 ```
 
 ### 4. Argo CD UI Access
 ```bash
-kubectl port-forward svc/argocd-server -n argocd 8080:8080
+kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
-Visit: http://localhost:8080
+Visit: http://localhost:443
 
 Get password:
 ```bash
