@@ -72,6 +72,12 @@ spec:
 
 ```bash
 istioctl install --set profile=demo -y
+
+cd istio-1.21.0
+kubectl apply -f manifests/charts/istio-operator/crds/crd-operator.yaml
+helm install istio-operator manifests/charts/istio-operator \
+  --namespace istio-operator \
+  --create-namespace
 ```
 
 Example `VirtualService`:
