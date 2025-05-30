@@ -14,11 +14,11 @@ spec:
       labels:
         app: service-a
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
       - name: service-a
-        image: bretfisher/node-express
+        image: hashicorp/http-echo
+        args:
+          - "-text=Hello from Service A"
         ports:
         - containerPort: 3000
         resources:
