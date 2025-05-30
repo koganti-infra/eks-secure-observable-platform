@@ -3,7 +3,7 @@ data "aws_iam_policy_document" "karpenter_assume_role" {
     actions = ["sts:AssumeRole"]
     principals {
       type        = "Service"
-      identifiers = ["ec2.amazonaws.com", "karpenter.sh"]
+      identifiers = ["ec2.amazonaws.com"]
     }
   }
 }
