@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: service-a
-        image: vkoganti/service-a:latest
+        image: nginx:1.25.2
         ports:
         - containerPort: 3000
         resources:

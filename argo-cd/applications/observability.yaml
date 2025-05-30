@@ -6,12 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/koganti-infra/eks-secure-observable-platform.git
-    targetRevision: HEAD
-    path: observability
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 48.3.1
     helm:
       valueFiles:
-        - helm-values/prometheus-stack-values.yaml
+        - https://raw.githubusercontent.com/koganti-infra/eks-secure-observable-platform/main/observability/helm-values/prometheus-stack-values.yaml
+      values: |
+        crds:
+          enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
