@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/koganti-infra/eks-secure-observable-platform.git
     targetRevision: HEAD
-    path: observability/helm-values
+    path: observability
     helm:
       valueFiles:
-        - prometheus-stack-values.yaml
+        - helm-values/prometheus-stack-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
@@ -19,3 +19,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
+

@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/koganti-infra/eks-secure-observable-platform.git
     targetRevision: HEAD
-    path: microservices/service-a
+    path: microservices
   destination:
     server: https://kubernetes.default.svc
     namespace: default
